@@ -1,0 +1,80 @@
+        -:    0:Source:ROBOTS.cpp
+        -:    0:Graph:ROBOTS.gcno
+        -:    0:Data:ROBOTS.gcda
+        -:    0:Runs:1
+        -:    1:#include "ROBOTS.h"
+        -:    2:
+        -:    3:using namespace std;
+        -:    4:
+        -:    5://This is provided for you
+       76:    6:std::string ROBOTS::intToString(int v)
+        -:    7:{
+       76:    8:    std::stringstream ss;
+       76:    9:    ss << v;
+       76:   10:    std::string result;
+       76:   11:    ss >> result;
+      152:   12:    return result;
+       76:   13:}
+        -:   14:
+        2:   15:bool ROBOTS::task1(std::string input)
+        -:   16:{
+        -:   17://TODO: Post the AI-generated code here
+       41:   18:    for (size_t i = 0; i < input.length(); ++i)
+        -:   19:    {
+      39*:   20:        if (!((input[i] >= 'A' && input[i] <= 'Z') || (input[i] >= '0' && input[i] <= '9')))
+        -:   21:        {
+    #####:   22:            return false;
+        -:   23:        }
+        -:   24:    }
+        2:   25:    return true;
+        -:   26:}
+        -:   27:
+        2:   28:std::string ROBOTS::task2(std::string input)
+        -:   29:{
+        -:   30://TODO: Post the AI-generated code here
+        2:   31:    std::string result = "";
+       41:   32:    for (size_t i = 0; i < input.length(); ++i)
+        -:   33:    {
+       39:   34:        int value = input[i] - 'A'; // Map character to numerical value
+       39:   35:        result += intToString(value % 3); // Convert to base 3
+        -:   36:    }
+        2:   37:    return result;
+    =====:   38:}
+        -:   39:
+        2:   40:std::string ROBOTS::task3(std::string input)
+        -:   41:{
+        -:   42://TODO: Post the AI-generated code here
+        2:   43:    std::string result = "";
+       48:   44:    for (size_t i = 0; i < input.length(); ++i)
+        -:   45:    {
+       46:   46:        if (input[i] == '0')
+       14:   47:            result += "A";
+       32:   48:        else if (input[i] == '1')
+       12:   49:            result += "B";
+       20:   50:        else if (input[i] == '2')
+       13:   51:            result += "C";
+        -:   52:    }
+        2:   53:    return result;
+    =====:   54:}
+        -:   55:
+        2:   56:std::string ROBOTS::task4(std::string input)
+        -:   57:{
+        -:   58://TODO: Post the AI-generated code here
+        2:   59:    std::string result = "";
+        2:   60:    size_t i = 0;
+       39:   61:    while (i < input.length())
+        -:   62:    {
+       37:   63:        char currentChar = input[i];
+       37:   64:        size_t count = 1;
+       39:   65:        while (i + 1 < input.length() && input[i + 1] == currentChar)
+        -:   66:        {
+        2:   67:            ++count;
+        2:   68:            ++i;
+        -:   69:        }
+       37:   70:        result += intToString(count) + currentChar;
+       37:   71:        ++i;
+        -:   72:    }
+        2:   73:    return result;
+    =====:   74:}
+        -:   75:
+        -:   76:

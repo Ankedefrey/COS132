@@ -1,0 +1,38 @@
+        -:    0:Source:main.cpp
+        -:    0:Graph:main.gcno
+        -:    0:Data:main.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:#include <string>
+        -:    3:#include <cstdlib>
+        -:    4:#include <ctime>
+        -:    5:
+        -:    6:#include "ROBOTS.h"
+        -:    7:
+        -:    8:using namespace std;
+        -:    9:
+        2:   10:void studentAlgorithm(const string& input)
+        -:   11:{
+        -:   12:    
+        2:   13:    cout << "Enter droid name: " << input << endl;
+        -:   14:
+        2:   15:    if (ROBOTS::task1(input))
+        -:   16:    {
+        2:   17:        cout << "Input was valid... progressing to next phase" << endl;
+        2:   18:        string convertedInput = ROBOTS::task2(input);
+        2:   19:        cout << "Converted: " << convertedInput << endl;
+        2:   20:        string translatedInput = ROBOTS::task3(convertedInput);
+        2:   21:        cout << "Translated: " << translatedInput << endl;
+        2:   22:        string expandedInput = ROBOTS::task4(translatedInput);
+        2:   23:        cout << "Expanded: " << expandedInput << endl;
+        2:   24:    }
+        -:   25:    else {
+    #####:   26:       cout << "Input was invalid... halting execution" << endl;
+        -:   27:    }
+        2:   28:}
+        -:   29:
+        1:   30:int main(int argc, char const *argv[])
+        -:   31:{
+        1:   32:	studentAlgorithm("R2D2");
+        1:   33:	studentAlgorithm("ABCDEFGHIJKLMNOPQRSTUWXYZ0123456789");
+        1:   34:}
