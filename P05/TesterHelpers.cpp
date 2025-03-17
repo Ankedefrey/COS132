@@ -17,10 +17,12 @@ bool isSame(int expected, int received) {
     //if input 1 = input 2
         //call passedPrinter function and return true
     if (expected == received){
-        return isSame(expected, received);
+        passedPrinter(expected, received);
+        return true;
     }
     else {
-        return failedPrinter(expected, received);
+        failedPrinter(expected, received);
+        return false;
     }
     //else
         //call failedPrinter function and return false
@@ -30,6 +32,14 @@ bool isDifferent(int expected, int received) {
     //determine if two inputs are different or not
     //if input 1 = input 2
         //call passedPrinter and return false
+    if (expected != received){
+        failedPrinter(expected, received);
+        return true;
+    }
+    else {
+        passedPrinter(expected, received);
+        return false;
+    }
     //else 
         //call failedPrinter and return true
 }
@@ -44,5 +54,14 @@ int compareTo(int expected, int received) {
             //when x=y, functions equal to each other f(x,y)=0
             //when x>y, function 1 bigger than function 2 f(x,y)=1
             //when x<y, function 1 smaller than function 2 f(x,y)=-1
+    if (expected==received) {
+        return 1;
+    }
+    else if (expected > received) {
+        return 1;
+    }
+    else if (expected < received) {
+        return -1;
+    }
 
 }
