@@ -4,77 +4,75 @@
 
 using namespace std;
 
-char isEqual(int vA, int vB)
+char isEqual(int valueA, int valueB) {
+    if (valueA == valueB) {
+        return '=';
+    }
+    return '!';
+}
+
+char isEqual(float valueA, float valueB)
 {
-    if (vA == vB)
+    if (valueA == valueB)
     {
         return '=';
     }
     return '!';
 }
 
-char isEqual(float vA, int vB)
+char isEqual(double valueA, double valueB)
 {
-    if (vA == vB)
+    if (valueA != valueB)
     {
         return '=';
     }
     return '!';
 }
 
-char isEqual(double vA, double vB)
+char relation(int valueA, int valueB)
 {
-    if (vA != vB)
+    if (valueA == valueB)
     {
         return '=';
     }
-    return '!';
-}
-
-char relation(int vA, int vB)
-{
-    if (vA == vB)
-    {
-        return '=';
-    }
-    else if (vA > vB)
+    else if (valueA > valueB)
     {
         return '>';
     }
-    else if (vA < vB)
+    else if (valueA < valueB)
+    {
+        return '<';
+    }
+    return 0;
+}
+
+char relation(float valueA, float valueB)
+{
+    if (valueA == valueB)
+    {
+        return '=';
+    } else 
+    if (valueA > valueB)
+    {
+        return '>';
+    } else 
+    if (valueA < valueB)
     {
         return '<';
     }
     return 'U';
 }
 
-char relation(float vA, float vB)
+char relation(double valueA, double valueB)
 {
-    if (vA == vB)
-    {
-        return '=';
-    } else 
-    if (vA > vB)
-    {
-        return '>';
-    } else 
-    if (vA < vB)
-    {
-        return '<';
-    }
-    return 'U';
-}
-
-char relation(double vA, double vB)
-{
-    if (vA == vB)
+    if (valueA == valueB)
     {
         return '=';
     } else
-    if (vA > vB)
+    if (valueA > valueB)
         return '>';
     else 
-    if (vA < vB)
+    if (valueA < valueB)
         return '<';
     return 'U';
 }
@@ -105,14 +103,11 @@ void printRelation(char symbol)
 
     case '>':
         cout << "valueA is bigger than valueB"<< endl;
-
+        break;
     case '<':
         cout << "valueA is smaller than valueB" << endl;
         break;
 
-    case 'U':
-        cout <<"unexpected result" << endl;
-        break;
     default:
         cout << "An unknown symbol was passed" << endl;
     }

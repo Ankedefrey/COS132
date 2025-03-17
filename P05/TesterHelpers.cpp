@@ -1,3 +1,5 @@
+#include <iostream>
+#include "ValueTesters.h"
 #include "TesterHelpers.h"
 
 void passedPrinter(int expected, int received) {
@@ -128,7 +130,7 @@ int compareTo(int expected, int received) {
 
 int compareTo(float expected, float received) {
     if (expected==received) {
-        return 1;
+        return 0;
     }
     else if (expected > received) {
         return 1;
