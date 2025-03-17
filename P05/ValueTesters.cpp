@@ -1,4 +1,6 @@
+#include <iostream>
 #include "ValueTesters.h"
+#include "TesterHelpers.h"
 
 using namespace std;
 
