@@ -96,3 +96,83 @@ string convertElseIf(string input){
     //some looping structure
     }
 
+
+
+//Baby case build from this
+void countToNumber(int n){
+    for(int i=0; i<= n; i++){
+         cout << i << endl;
+    }
+}
+
+//Repetion statements for loops
+string covertFor(string input){
+    string result = " ";
+    for(int i=0; i< input.length();i++){
+        char nLetter = getNextChar(input);
+        switch(nLetter){
+            case 0:
+                nLetter = 'A';
+                break;
+            case 1:
+                nLetter = 'B';
+                break;
+            case 2:
+                nLetter = 'C';
+            default:
+                nLetter = ' ';
+        }
+        result += nLetter;
+    }
+    return result;
+}
+
+//Repetition statements while loops
+string covertFor(string input){
+    string result = " ";
+    int i = 0;
+    while(i < input.length()){
+        char nLetter = input[i];
+        switch(nLetter){
+            case 0:
+                nLetter = 'A';
+                break;
+            case 1:
+                nLetter = 'B';
+                break;
+            case 2:
+                nLetter = 'C';
+            default:
+                nLetter = ' ';
+        }
+        result += nLetter;
+        i++;
+    }
+    return result;
+}
+
+//repetition statements do-while loops
+string covertFor(string input){
+    string result = " ";
+    int i = 0;
+    do{
+        char nLetter = input[i];
+
+        if (nLetter){
+            case 0:
+                nLetter = 'A';
+                break;
+            case 1:
+                nLetter = 'B';
+                break;
+            case 2:
+                nLetter = 'C';
+            default:
+                nLetter = ' ';
+        }
+        result += nLetter;
+        i++;
+    }
+    return result;
+}
+
